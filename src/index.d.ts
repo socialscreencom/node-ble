@@ -36,9 +36,10 @@ declare namespace NodeBle {
         getAddress(): Promise<string>;
         getAddressType(): Promise<string>;
         getAlias(): Promise<string>;
-        getRSSI(): Promise<string>;
-        isPaired(): Promise<string>;
-        isConnected(): Promise<string>;
+        getRSSI(): Promise<number>;
+        getTXPower(): Promise<number>;
+        isPaired(): Promise<boolean>;
+        isConnected(): Promise<boolean>;
         pair(): Promise<void>;
         cancelPair(): Promise<void>;
         connect(): Promise<void>;
