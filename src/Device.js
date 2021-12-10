@@ -8,7 +8,7 @@ class Device extends EventEmitter {
     this.dbus = dbus
     this.adapter = adapter
     this.device = device
-    this.helper = new BusHelper(dbus, 'org.bluez', `/org/bluez/${adapter}/${device}`, 'org.bluez.Device1', { usePropsEvents: true })
+    this.helper = new BusHelper(dbus, 'org.bluez', `/org/bluez/${adapter}/${device}`, 'org.bluez.Device1')
   }
 
   async getName () {
