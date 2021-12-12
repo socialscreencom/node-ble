@@ -28,8 +28,48 @@ class Adapter {
     return this.helper.prop('Alias')
   }
 
+  async setAlias (alias) {
+    return this.helper.set('Alias', buildTypedValue('string', alias))
+  }
+
   async isPowered () {
     return this.helper.prop('Powered')
+  }
+
+  async setPowered (powered) {
+    return this.helper.set('Powered', buildTypedValue('boolean', powered))
+  }
+
+  async isDiscoverable () {
+    return this.helper.prop('Discoverable')
+  }
+
+  async setDiscoverable (discoverable) {
+    return this.helper.set('Discoverable', buildTypedValue('boolean', discoverable))
+  }
+
+  async getDiscoverableTimeout () {
+    return this.helper.prop('DiscoverableTimeout')
+  }
+
+  async setDiscoverableTimeout (timeout) {
+    return this.helper.set('DiscoverableTimeout', buildTypedValue('uint32', timeout))
+  }
+
+  async isPairable () {
+    return this.helper.prop('Pairable')
+  }
+
+  async setPairable (pairable) {
+    return this.helper.set('Pairable', buildTypedValue('boolean', pairable))
+  }
+
+  async getPairableTimeout () {
+    return this.helper.prop('PairableTimeout')
+  }
+
+  async setPairableTimeout (timeout) {
+    return this.helper.set('PairableTimeout', buildTypedValue('uint32', timeout))
   }
 
   async isDiscovering () {

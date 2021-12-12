@@ -13,7 +13,9 @@ module.exports = buildTypedValue
 const MAPPINGS = {
   string: 's',
   int16: 'n',
+  int32: 'i',
   boolean: 'b',
   uint16: 'q',
+  uint32: 'u',
   dict: 'e'
 }

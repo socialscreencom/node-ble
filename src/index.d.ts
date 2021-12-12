@@ -56,7 +56,17 @@ declare namespace NodeBle {
         getAddressType(): Promise<string>;
         getName(): Promise<string>;
         getAlias(): Promise<string>;
+        setAlias(alias: string): Promise<void>;
         isPowered(): Promise<boolean>;
+        setPowered(powered: boolean): Promise<void>;
+        isDiscoverable(): Promise<boolean>;
+        setDiscoverable(discoverable: boolean): Promise<void>;
+        getDiscoverableTimeout(): Promise<number>;
+        setDiscoverableTimeout(timeout: number): Promise<void>;
+        isPairable(): Promise<boolean>;
+        setPairable(pairable: boolean): Promise<void>;
+        getPairableTimeout(): Promise<number>;
+        setPairableTimeout(timeout: number): Promise<void>;
         isDiscovering(): Promise<boolean>;
         startDiscovery(): Promise<void>;
         stopDiscovery(): Promise<void>;
