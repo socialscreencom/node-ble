@@ -70,6 +70,8 @@ declare namespace NodeBle {
         isDiscovering(): Promise<boolean>;
         startDiscovery(): Promise<void>;
         stopDiscovery(): Promise<void>;
+        registerAdvertisement(advertisement: string): Promise<void>;
+        unregisterAdvertisement(advertisement: string): Promise<void>;
         devices(): Promise<string[]>;
         getDevice(uuid: string): Promise<Device>;
         waitDevice(uuid: string): Promise<Device>;

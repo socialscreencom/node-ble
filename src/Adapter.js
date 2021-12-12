@@ -10,6 +10,7 @@ class Adapter {
     this.dbus = dbus
     this.adapter = adapter
     this.helper = new BusHelper(dbus, 'org.bluez', `/org/bluez/${adapter}`, 'org.bluez.Adapter1')
+    this.advertisingHelper = new BusHelper(dbus, 'org.bluez', `/org/bluez/${adapter}`, 'org.bluez.LEAdvertisingManager1')
   }
 
   async getAddress () {
@@ -92,6 +93,14 @@ class Adapter {
       throw new Error('No discovery started')
     }
     await this.helper.callMethod('StopDiscovery')
+  }
+
+  async registerAdvertisement (advertisement) {
+    return this.advertisingHelper.callMethod('RegisterAdvertisement', advertisement, {})
+  }
+
+  async unregisterAdvertisement (advertisement) {
+    return this.advertisingHelper.callMethod('UnregisterAdvertisement', advertisement)
   }
 
   async devices () {
